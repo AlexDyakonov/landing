@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Brutal Pixel Art Colors
+				'pixel-lime': 'hsl(var(--pixel-lime))',
+				'pixel-blue': 'hsl(var(--pixel-blue))',
+				'pixel-dark': 'hsl(var(--pixel-dark))',
+				'surface': 'hsl(var(--surface))',
+				'surface-alt': 'hsl(var(--surface-alt))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +68,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			fontFamily: {
+				'grotesk': ['Space Grotesk', 'sans-serif'],
+				'mono': ['JetBrains Mono', 'monospace'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
