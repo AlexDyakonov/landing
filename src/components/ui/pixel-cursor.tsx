@@ -19,6 +19,7 @@ export const PixelCursor = () => {
   const animationRef = useRef<number>()
 
   const colors = ['#CFEA6F', '#80A6F5', '#3C2A25']
+  const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([])
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -33,27 +34,33 @@ export const PixelCursor = () => {
       const speed = Math.sqrt(dx * dx + dy * dy)
       
       // Create particles based on speed
-      if (speed > 2) {
-        const particleCount = Math.min(Math.floor(speed / 10), 8)
+      if (speed > 1) {
+        const particleCount = Math.min(Math.floor(speed / 8), 12)
         
         for (let i = 0; i < particleCount; i++) {
           const angle = Math.random() * Math.PI * 2
-          const velocity = speed * 0.2 + Math.random() * 3
+          const velocity = (speed * 0.3) + Math.random() * 4
           
           const newParticle: Particle = {
             id: particleIdRef.current++,
-            x: newX + (Math.random() - 0.5) * 20,
-            y: newY + (Math.random() - 0.5) * 20,
-            vx: Math.cos(angle) * velocity + dx * 0.1,
-            vy: Math.sin(angle) * velocity + dy * 0.1,
+            x: newX + (Math.random() - 0.5) * 16,
+            y: newY + (Math.random() - 0.5) * 16,
+            vx: Math.cos(angle) * velocity + dx * 0.2,
+            vy: Math.sin(angle) * velocity + dy * 0.2,
             life: 1,
-            maxLife: 60 + Math.random() * 30,
+            maxLife: 45 + Math.random() * 25,
             color: colors[Math.floor(Math.random() * colors.length)]
           }
           
-          setParticles(prev => [...prev.slice(-50), newParticle])
+          setParticles(prev => [...prev.slice(-60), newParticle])
         }
       }
+      
+      // Update trail
+      setTrail(prev => [
+        ...prev.slice(-8),
+        { x: newX, y: newY, id: Date.now() + Math.random() }
+      ])
       
       setLastPosition({ x: newX, y: newY })
     }
@@ -71,7 +78,7 @@ export const PixelCursor = () => {
     }
   }, [lastPosition])
 
-  // Animate particles
+  // Animate particles and trail
   useEffect(() => {
     const animate = () => {
       setParticles(prev => 
@@ -80,12 +87,15 @@ export const PixelCursor = () => {
             ...particle,
             x: particle.x + particle.vx,
             y: particle.y + particle.vy,
-            vx: particle.vx * 0.98,
-            vy: particle.vy * 0.98 + 0.2, // gravity
+            vx: particle.vx * 0.96,
+            vy: particle.vy * 0.96 + 0.3, // gravity
             life: particle.life - 1
           }))
           .filter(particle => particle.life > 0)
       )
+      
+      // Fade out trail
+      setTrail(prev => prev.slice(-6))
       
       animationRef.current = requestAnimationFrame(animate)
     }
@@ -110,17 +120,36 @@ export const PixelCursor = () => {
         }
       `}</style>
       
+      {/* Trail */}
+      {trail.map((point, index) => (
+        <div
+          key={point.id}
+          className="fixed pointer-events-none z-[9997] pixel-perfect"
+          style={{
+            left: `${point.x - 2}px`,
+            top: `${point.y - 2}px`,
+            width: '4px',
+            height: '4px',
+            backgroundColor: '#CFEA6F',
+            border: '1px solid #3C2A25',
+            opacity: (index + 1) / trail.length * 0.6,
+            transition: 'none'
+          }}
+        />
+      ))}
+
       {/* Custom Cursor */}
       <div
-        className="fixed pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed pointer-events-none z-[9999]"
         style={{
           left: `${position.x - 8}px`,
           top: `${position.y - 8}px`,
           transition: 'none'
         }}
       >
-        <div className="w-4 h-4 bg-pixel-dark border border-pixel-lime pixel-perfect relative">
-          <div className="absolute inset-0 border border-pixel-blue pixel-perfect animate-pulse"></div>
+        <div className="w-4 h-4 bg-pixel-dark border-2 border-pixel-lime pixel-perfect relative">
+          <div className="absolute inset-[1px] bg-pixel-lime border border-pixel-dark pixel-perfect animate-pulse"></div>
+          <div className="absolute -top-1 -left-1 w-2 h-2 bg-pixel-blue border border-pixel-dark pixel-perfect"></div>
         </div>
       </div>
 
