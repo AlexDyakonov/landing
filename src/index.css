@@ -196,13 +196,13 @@
   
   .glitch::before {
     @apply text-secondary;
-    animation: glitch-1 0.3s infinite;
+    animation: glitch-1 2s ease-in-out infinite;
     clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
   }
   
   .glitch::after {
     @apply text-blue-400;
-    animation: glitch-2 0.3s infinite;
+    animation: glitch-2 2s ease-in-out infinite;
     clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
   }
   
@@ -237,29 +237,17 @@
 
 /* Keyframes */
 @keyframes glitch-1 {
-  0%, 100% { transform: translateX(0); }
-  10% { transform: translateX(-2px); }
-  20% { transform: translateX(2px); }
-  30% { transform: translateX(-2px); }
-  40% { transform: translateX(2px); }
-  50% { transform: translateX(-2px); }
-  60% { transform: translateX(2px); }
-  70% { transform: translateX(-2px); }
-  80% { transform: translateX(2px); }
-  90% { transform: translateX(-2px); }
+  0%, 90%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-1px); }
+  25% { transform: translateX(1px); }
+  30% { transform: translateX(0); }
 }
 
 @keyframes glitch-2 {
-  0%, 100% { transform: translateX(0); }
-  10% { transform: translateX(2px); }
-  20% { transform: translateX(-2px); }
-  30% { transform: translateX(2px); }
-  40% { transform: translateX(-2px); }
-  50% { transform: translateX(2px); }
-  60% { transform: translateX(-2px); }
-  70% { transform: translateX(2px); }
-  80% { transform: translateX(-2px); }
-  90% { transform: translateX(2px); }
+  0%, 90%, 100% { transform: translateX(0); }
+  20% { transform: translateX(1px); }
+  25% { transform: translateX(-1px); }
+  30% { transform: translateX(0); }
 }
 
 /* Responsive Typography */

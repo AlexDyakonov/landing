@@ -115,19 +115,6 @@ export const Contact = () => {
             <p className="text-sm text-muted-foreground mt-1">Готов к удаленной работе</p>
           </div>
           
-          {/* Thank You Section */}
-          <div className="mt-20">
-            <div className="text-center">
-              <h3 className="text-brutal text-2xl md:text-4xl mb-4 glitch" data-text="СПАСИБО ЗА ВНИМАНИЕ!">
-                СПАСИБО ЗА ВНИМАНИЕ!
-              </h3>
-              <div className="flex justify-center gap-4 mt-8">
-                <div className="w-8 h-8 bg-pixel-lime border-2 border-pixel-dark"></div>
-                <div className="w-8 h-8 bg-pixel-blue border-2 border-pixel-dark"></div>
-                <div className="w-8 h-8 bg-pixel-dark border-2 border-pixel-dark"></div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
