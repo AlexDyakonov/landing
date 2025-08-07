@@ -9,9 +9,6 @@ interface Particle {
   life: number
   maxLife: number
   color: string
-  size: number
-  rotation: number
-  rotationSpeed: number
 }
 
 export const PixelCursor = () => {
@@ -21,7 +18,7 @@ export const PixelCursor = () => {
   const particleIdRef = useRef(0)
   const animationRef = useRef<number>()
 
-  const gradientColors = ['#ff66cc', '#66ccff', '#ffffff']
+  const colors = ['#CFEA6F', '#80A6F5', '#3C2A25']
   const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([])
 
   useEffect(() => {
@@ -31,47 +28,31 @@ export const PixelCursor = () => {
       
       setPosition({ x: newX, y: newY })
       
-      // Calculate speed for dynamic emission
+      // Calculate speed
       const dx = newX - lastPosition.x
       const dy = newY - lastPosition.y
       const speed = Math.sqrt(dx * dx + dy * dy)
       
-      // Create particles based on JSON spec - emit rate 50, but scale with speed
-      if (speed > 0.5) {
-        const baseEmitRate = 3 // Reduced from 50 for performance
-        const particleCount = Math.min(Math.floor(baseEmitRate * (speed / 10)), 8)
+      // Create particles based on speed
+      if (speed > 1) {
+        const particleCount = Math.min(Math.floor(speed / 8), 12)
         
         for (let i = 0; i < particleCount; i++) {
-          // Random emit angle with 45-degree spread
-          const baseAngle = Math.atan2(dy, dx)
-          const spread = (45 * Math.PI / 180) // 45 degrees in radians
-          const angle = baseAngle + (Math.random() - 0.5) * spread
-          
-          // Emit speed between 100-200 (scaled down for pixels)
-          const emitSpeed = (100 + Math.random() * 100) * 0.5
-          
-          // Random size between 2-6px
-          const size = 2 + Math.random() * 4
-          
-          // Random acceleration
-          const accelX = (Math.random() - 0.5) * 100
-          const accelY = (Math.random() - 0.5) * 100
+          const angle = Math.random() * Math.PI * 2
+          const velocity = (speed * 0.3) + Math.random() * 4
           
           const newParticle: Particle = {
             id: particleIdRef.current++,
-            x: newX,
-            y: newY,
-            vx: Math.cos(angle) * emitSpeed + accelX * 0.01,
-            vy: Math.sin(angle) * emitSpeed + accelY * 0.01,
+            x: newX + (Math.random() - 0.5) * 16,
+            y: newY + (Math.random() - 0.5) * 16,
+            vx: Math.cos(angle) * velocity + dx * 0.2,
+            vy: Math.sin(angle) * velocity + dy * 0.2,
             life: 1,
-            maxLife: 30 + Math.random() * 60, // 1.5-3 seconds at 60fps
-            color: gradientColors[Math.floor(Math.random() * gradientColors.length)],
-            size: size,
-            rotation: Math.random() * 360,
-            rotationSpeed: (Math.random() - 0.5) * 360 // -180 to 180 degrees per second
+            maxLife: 45 + Math.random() * 25,
+            color: colors[Math.floor(Math.random() * colors.length)]
           }
           
-          setParticles(prev => [...prev.slice(-120), newParticle])
+          setParticles(prev => [...prev.slice(-60), newParticle])
         }
       }
       
@@ -97,30 +78,19 @@ export const PixelCursor = () => {
     }
   }, [lastPosition])
 
-  // Animate particles and trail with physics from JSON spec
+  // Animate particles and trail
   useEffect(() => {
     const animate = () => {
       setParticles(prev => 
         prev
-          .map(particle => {
-            // Apply physics according to JSON spec
-            const gravityX = 0
-            const gravityY = 300 * 0.016 // 300 units/s converted to per-frame at 60fps
-            
-            // Apply drag (0.05) and velocity decay (0.98)
-            const newVx = particle.vx * 0.98 * (1 - 0.05)
-            const newVy = (particle.vy * 0.98 * (1 - 0.05)) + gravityY
-            
-            return {
-              ...particle,
-              x: particle.x + newVx,
-              y: particle.y + newVy,
-              vx: newVx + gravityX,
-              vy: newVy,
-              rotation: particle.rotation + particle.rotationSpeed * 0.016, // Convert to per-frame
-              life: particle.life - 1
-            }
-          })
+          .map(particle => ({
+            ...particle,
+            x: particle.x + particle.vx,
+            y: particle.y + particle.vy,
+            vx: particle.vx * 0.96,
+            vy: particle.vy * 0.96 + 0.3, // gravity
+            life: particle.life - 1
+          }))
           .filter(particle => particle.life > 0)
       )
       
@@ -189,16 +159,13 @@ export const PixelCursor = () => {
           key={particle.id}
           className="fixed pointer-events-none z-[9998] pixel-perfect"
           style={{
-            left: `${particle.x - particle.size/2}px`,
-            top: `${particle.y - particle.size/2}px`,
-            width: `${particle.size}px`,
-            height: `${particle.size}px`,
+            left: `${particle.x}px`,
+            top: `${particle.y}px`,
+            width: '3px',
+            height: '3px',
             backgroundColor: particle.color,
-            border: '1px solid rgba(60, 42, 37, 0.5)',
+            border: '1px solid #3C2A25',
             opacity: particle.life / particle.maxLife,
-            transform: `rotate(${particle.rotation}deg)`,
-            borderRadius: '50%',
-            boxShadow: `0 0 ${particle.size * 2}px ${particle.color}40`,
             transition: 'none'
           }}
         />
