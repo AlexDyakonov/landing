@@ -52,10 +52,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Brutal Pixel Art Colors
-				'pixel-lime': 'hsl(var(--pixel-lime))',
-				'pixel-blue': 'hsl(var(--pixel-blue))',
-				'pixel-dark': 'hsl(var(--pixel-dark))',
+				// NEW Brutal Pixel Art Colors
+				'pixel-primary': 'hsl(var(--pixel-primary))',     /* #80A6F5 - Blue */
+				'pixel-secondary': 'hsl(var(--pixel-secondary))', /* #CFEA6F - Lime */
+				'pixel-accent': 'hsl(var(--pixel-accent))',       /* #3C2A25 - Dark Brown */
 				'surface': 'hsl(var(--surface))',
 				'surface-alt': 'hsl(var(--surface-alt))',
 				sidebar: {

@@ -4,83 +4,83 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Brutalist Retro Pixel Art Design System */
+/* Brutalist Retro Pixel Art Design System - New Palette */
 @layer base {
   :root {
-    /* Primary Brand Colors */
-    --pixel-lime: 81 89% 64%;      /* #CFEA6F */
-    --pixel-blue: 221 89% 73%;     /* #80A6F5 */
-    --pixel-dark: 16 22% 18%;      /* #3C2A25 */
+    /* NEW Primary Brand Colors */
+    --pixel-primary: 221 89% 73%;    /* #80A6F5 - Primary blue */
+    --pixel-secondary: 81 89% 64%;   /* #CFEA6F - Secondary lime */
+    --pixel-accent: 16 22% 18%;      /* #3C2A25 - Accent dark brown */
     
-    /* Background & Surface */
-    --background: 81 89% 64%;      /* #CFEA6F */
-    --foreground: 16 22% 18%;      /* #3C2A25 */
-    --surface: 81 89% 70%;
-    --surface-alt: 221 89% 80%;
+    /* Background & Surface - Blue background theme */
+    --background: 221 89% 73%;       /* #80A6F5 - Primary blue background */
+    --foreground: 16 22% 18%;        /* #3C2A25 - Dark text */
+    --surface: 221 89% 78%;          /* Lighter blue surface */
+    --surface-alt: 81 89% 64%;       /* Lime alternative surface */
     
     /* Interactive States */
-    --primary: 16 22% 18%;         /* Dark for buttons */
-    --primary-foreground: 81 89% 64%;
-    --secondary: 221 89% 73%;      /* Blue */
-    --secondary-foreground: 16 22% 18%;
-    --accent: 81 89% 64%;
-    --accent-foreground: 16 22% 18%;
+    --primary: 221 89% 73%;          /* Blue primary */
+    --primary-foreground: 16 22% 18%; /* Dark text on blue */
+    --secondary: 81 89% 64%;         /* Lime secondary */
+    --secondary-foreground: 16 22% 18%; /* Dark text on lime */
+    --accent: 16 22% 18%;            /* Dark accent */
+    --accent-foreground: 81 89% 64%; /* Lime text on dark */
     
     /* Card & Components */
-    --card: 81 89% 68%;
-    --card-foreground: 16 22% 18%;
-    --popover: 81 89% 68%;
+    --card: 221 89% 78%;             /* Light blue cards */
+    --card-foreground: 16 22% 18%;   /* Dark text on cards */
+    --popover: 221 89% 78%;
     --popover-foreground: 16 22% 18%;
     
     /* Form Elements */
-    --border: 16 22% 25%;
-    --input: 81 89% 60%;
-    --ring: 16 22% 18%;
-    --muted: 221 89% 80%;
-    --muted-foreground: 16 22% 35%;
+    --border: 16 22% 18%;            /* Dark borders for contrast */
+    --input: 221 89% 80%;            /* Light blue inputs */
+    --ring: 16 22% 18%;              /* Dark focus rings */
+    --muted: 221 89% 85%;            /* Very light blue muted */
+    --muted-foreground: 16 22% 35%;  /* Muted dark text */
     
     /* Status */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 81 89% 64%;
+    --destructive: 0 84% 60%;        /* Red for destructive actions */
+    --destructive-foreground: 221 89% 73%; /* Blue text on red */
     
-    /* Geometric Elements */
-    --radius: 0rem; /* Sharp, brutal edges */
-    --pixel-shadow: 4px 4px 0px hsl(var(--pixel-dark));
-    --pixel-shadow-hover: 2px 2px 0px hsl(var(--pixel-dark));
+    /* Geometric Elements - Brutalist Style */
+    --radius: 0rem;                  /* Sharp, brutal edges */
+    --pixel-shadow: 4px 4px 0px hsl(var(--pixel-accent));
+    --pixel-shadow-hover: 2px 2px 0px hsl(var(--pixel-accent));
+    --pixel-shadow-strong: 6px 6px 0px hsl(var(--pixel-accent));
     
-    /* Typography Scale */
-    --text-hero: 4rem;
-    --text-xl: 2rem;
-    --text-lg: 1.25rem;
-    --text-base: 1rem;
+    /* Typography Scale - Geometric & Bold */
+    --text-hero: 4rem;               /* 64px+ for headings */
+    --text-display: 3rem;            /* Large display text */
+    --text-xl: 2rem;                 /* Section headers */
+    --text-lg: 1.25rem;              /* Subsections */
+    --text-base: 1.125rem;           /* Body 16-20px */
     
-    /* Spacing Grid */
+    /* Spacing Grid - 24px gutter system */
     --grid-unit: 8px;
+    --grid-gutter: 24px;
+    --grid-margin: 32px;
     --spacing-xs: calc(var(--grid-unit) * 1);
     --spacing-sm: calc(var(--grid-unit) * 2);
     --spacing-md: calc(var(--grid-unit) * 3);
     --spacing-lg: calc(var(--grid-unit) * 4);
     --spacing-xl: calc(var(--grid-unit) * 6);
+    --spacing-2xl: calc(var(--grid-unit) * 8);
     
-    /* Animations */
-    --transition-brutal: all 0.1s cubic-bezier(1, 0, 0, 1);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Animations - Digital & Snappy */
+    --transition-brutal: all 0.1s cubic-bezier(1, 0, 0, 1); /* Snappy */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar (keep existing) */
+    --sidebar-background: 221 89% 73%;
+    --sidebar-foreground: 16 22% 18%;
+    --sidebar-primary: 16 22% 18%;
+    --sidebar-primary-foreground: 221 89% 73%;
+    --sidebar-accent: 81 89% 64%;
+    --sidebar-accent-foreground: 16 22% 18%;
+    --sidebar-border: 16 22% 18%;
+    --sidebar-ring: 221 89% 73%;
   }
 
   .dark {
@@ -138,55 +138,85 @@
 }
 
 @layer components {
-  /* Brutal Pixel Buttons */
+  /* Brutalist Pixel Buttons - Enhanced */
   .btn-brutal {
-    @apply font-bold uppercase tracking-wider;
-    @apply border-2 border-foreground;
+    @apply font-bold uppercase tracking-[0.03em] leading-tight;
+    @apply border-2 border-pixel-accent bg-pixel-primary text-pixel-accent;
     @apply transition-all duration-100;
     @apply hover:translate-x-1 hover:translate-y-1;
+    @apply active:translate-x-2 active:translate-y-2;
     box-shadow: var(--pixel-shadow);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Space Grotesk', sans-serif;
+    image-rendering: pixelated;
   }
   
   .btn-brutal:hover {
     box-shadow: var(--pixel-shadow-hover);
+    @apply bg-pixel-secondary;
   }
   
-  /* Pixel Cards */
+  .btn-brutal.variant-secondary {
+    @apply bg-pixel-secondary text-pixel-accent border-pixel-accent;
+  }
+  
+  .btn-brutal.variant-cta {
+    @apply bg-pixel-accent text-pixel-secondary border-pixel-accent;
+    box-shadow: var(--pixel-shadow-strong);
+  }
+  
+  /* Pixel Cards - Enhanced with Brutalist Shadows */
   .card-brutal {
-    @apply border-2 border-foreground bg-card;
+    @apply border-2 border-pixel-accent bg-pixel-primary;
     box-shadow: var(--pixel-shadow);
     @apply transition-all duration-100;
+    image-rendering: pixelated;
   }
   
   .card-brutal:hover {
-    @apply -translate-y-1;
-    box-shadow: 6px 6px 0px hsl(var(--pixel-dark));
+    @apply -translate-y-1 translate-x-1;
+    box-shadow: var(--pixel-shadow-strong);
   }
   
-  /* Typography */
+  /* Typography - Geometric & Bold */
   .text-brutal {
     font-family: 'Space Grotesk', sans-serif;
-    @apply font-bold uppercase tracking-wide;
+    @apply font-bold uppercase tracking-[0.03em] leading-[1.1];
+    text-rendering: geometricPrecision;
+  }
+  
+  .text-brutal-hero {
+    @apply text-brutal;
+    font-size: var(--text-hero);
+    @apply text-pixel-accent;
+    text-shadow: 4px 4px 0px hsl(var(--pixel-secondary));
   }
   
   .text-pixel {
     font-family: 'JetBrains Mono', monospace;
-    @apply font-bold;
+    @apply font-bold tracking-wide;
+    image-rendering: pixelated;
   }
   
-  /* Grid Pattern */
+  .text-decorative {
+    @apply text-brutal;
+    @apply border-2 border-pixel-accent inline-block px-2 py-1;
+    background: linear-gradient(45deg, hsl(var(--pixel-primary)), hsl(var(--pixel-secondary)));
+  }
+  
+  /* Grid Pattern - Brutalist Graph Paper */
   .grid-pattern {
     background-image: 
-      linear-gradient(rgba(60, 42, 37, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(60, 42, 37, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+      linear-gradient(hsl(var(--pixel-accent) / 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--pixel-accent) / 0.2) 1px, transparent 1px);
+    background-size: var(--grid-gutter) var(--grid-gutter);
   }
   
-  /* Glitch Effect - Subtle and Readable */
+  /* Enhanced Glitch Effect */
   .glitch {
-    @apply relative;
-    text-shadow: 2px 2px 0px hsl(var(--pixel-dark)), -1px -1px 0px hsl(var(--pixel-blue));
+    @apply relative text-pixel-accent;
+    text-shadow: 
+      2px 2px 0px hsl(var(--pixel-secondary)), 
+      -1px -1px 0px hsl(var(--pixel-primary));
   }
   
   .glitch::before,
@@ -194,26 +224,46 @@
     content: attr(data-text);
     @apply absolute top-0 left-0 w-full h-full opacity-0;
     pointer-events: none;
+    mix-blend-mode: multiply;
   }
   
   .glitch::before {
-    @apply text-secondary;
-    animation: glitch-1 4s ease-in-out infinite;
+    color: hsl(var(--pixel-primary));
+    animation: glitch-1 3s ease-in-out infinite;
     clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
   }
   
   .glitch::after {
-    @apply text-accent;
-    animation: glitch-2 4s ease-in-out infinite;
+    color: hsl(var(--pixel-secondary));
+    animation: glitch-2 3s ease-in-out infinite;
     clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
   }
   
-  /* Pixel Art Styling */
+  /* Pixel Art Styling - Enhanced */
   .pixel-perfect {
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-crisp-edges;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+  }
+  
+  /* Interactive Elements */
+  .hover-scale {
+    @apply transition-transform duration-100;
+  }
+  
+  .hover-scale:hover {
+    @apply scale-110;
+  }
+  
+  .digital-snap {
+    @apply transition-all duration-75;
+  }
+  
+  .digital-snap:hover {
+    @apply translate-x-1 translate-y-1;
   }
 }
 
