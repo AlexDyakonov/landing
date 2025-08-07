@@ -10,7 +10,7 @@ export const About = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-16">
-            <h2 className="text-brutal text-3xl md:text-5xl mb-4">
+            <h2 className="text-brutal text-3xl md:text-5xl mb-4 text-pixel-dark">
               ОБО МНЕ
             </h2>
             <div className="w-24 h-1 bg-pixel-dark mx-auto"></div>
@@ -24,14 +24,14 @@ export const About = () => {
                   <div className="w-12 h-12 bg-pixel-lime border-2 border-pixel-dark flex items-center justify-center">
                     <GraduationCap className="w-6 h-6 text-pixel-dark" />
                   </div>
-                  <h3 className="text-brutal text-xl">ОБРАЗОВАНИЕ</h3>
+                  <h3 className="text-brutal text-xl text-pixel-dark">ОБРАЗОВАНИЕ</h3>
                 </div>
                 
                 <div className="space-y-4">
                   <div className="border-l-4 border-pixel-blue pl-4">
-                    <h4 className="font-grotesk font-bold text-lg">Университет ИТМО</h4>
+                    <h4 className="font-grotesk font-bold text-lg text-pixel-dark">Университет ИТМО</h4>
                     <p className="text-muted-foreground">НОЦ Инфохимии</p>
-                    <p className="text-sm">Студент 2-го курса Software Engineering</p>
+                    <p className="text-sm text-pixel-dark">Студент 2-го курса Software Engineering</p>
                     <div className="flex items-center gap-2 mt-2">
                       <MapPin className="w-4 h-4" />
                       <span className="text-sm">Санкт-Петербург • 2022 – 2024</span>
@@ -39,7 +39,7 @@ export const About = () => {
                   </div>
                   
                   <div className="border-l-4 border-pixel-lime pl-4">
-                    <h4 className="font-grotesk font-bold">Дополнительное образование</h4>
+                    <h4 className="font-grotesk font-bold text-pixel-dark">Дополнительное образование</h4>
                     <ul className="text-sm space-y-1 mt-2">
                       <li>• Основы DevOps (ИТМО, 2024)</li>
                       <li>• Продвинутый курс по DevOps (NoLabel DevOps, 2023)</li>
@@ -53,7 +53,7 @@ export const About = () => {
                   <div className="w-12 h-12 bg-pixel-blue border-2 border-pixel-dark flex items-center justify-center">
                     <Award className="w-6 h-6 text-pixel-dark" />
                   </div>
-                  <h3 className="text-brutal text-xl">ДОСТИЖЕНИЯ</h3>
+                  <h3 className="text-brutal text-xl text-pixel-dark">ДОСТИЖЕНИЯ</h3>
                 </div>
                 
                 <div className="grid gap-3">
@@ -76,11 +76,12 @@ export const About = () => {
             {/* Right Column - Skills & Languages */}
             <div className="space-y-8">
               <div className="card-brutal p-8">
-                <h3 className="text-brutal text-xl mb-6">ТЕХНИЧЕСКИЕ НАВЫКИ</h3>
+                <h3 className="text-brutal text-xl mb-6 text-pixel-dark">ТЕХНИЧЕСКИЕ НАВЫКИ</h3>
                 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-bold text-pixel-blue mb-3">DevOps & Инфраструктура</h4>
+                    {/* Сохраняю исправление контрастности */}
+                    <h4 className="font-bold text-pixel-dark mb-3">DevOps & Инфраструктура</h4>
                     <div className="flex flex-wrap gap-2">
                       {["Kubernetes", "Docker", "Docker Swarm", "Traefik", "GitHub Actions", "Gitlab Actions"].map((skill) => (
                         <span key={skill} className="bg-pixel-dark text-pixel-lime px-3 py-1 text-xs font-mono border border-pixel-dark">
@@ -91,7 +92,8 @@ export const About = () => {
                   </div>
                   
                   <div>
-                    <h4 className="font-bold text-pixel-blue mb-3">Языки программирования</h4>
+                    {/* Сохраняю исправление контрастности */}
+                    <h4 className="font-bold text-pixel-dark mb-3">Языки программирования</h4>
                     <div className="flex flex-wrap gap-2">
                       {["Java Core", "Python", "Bash", "SQL"].map((lang) => (
                         <span key={lang} className="bg-pixel-lime text-pixel-dark px-3 py-1 text-xs font-mono border border-pixel-dark">
@@ -102,7 +104,8 @@ export const About = () => {
                   </div>
                   
                   <div>
-                    <h4 className="font-bold text-pixel-blue mb-3">Базы данных</h4>
+                    {/* Сохраняю исправление контрастности */}
+                    <h4 className="font-bold text-pixel-dark mb-3">Базы данных</h4>
                     <div className="flex flex-wrap gap-2">
                       {["PostgreSQL", "ClickHouse", "Redis"].map((db) => (
                         <span key={db} className="bg-pixel-blue text-pixel-dark px-3 py-1 text-xs font-mono border border-pixel-dark">
@@ -113,7 +116,8 @@ export const About = () => {
                   </div>
                   
                   <div>
-                    <h4 className="font-bold text-pixel-blue mb-3">Мониторинг</h4>
+                    {/* Сохраняю исправление контрастности */}
+                    <h4 className="font-bold text-pixel-dark mb-3">Мониторинг</h4>
                     <div className="flex flex-wrap gap-2">
                       {["Grafana", "Prometheus", "Loki", "Portainer"].map((tool) => (
                         <span key={tool} className="bg-secondary text-pixel-dark px-3 py-1 text-xs font-mono border border-pixel-dark">
@@ -126,7 +130,7 @@ export const About = () => {
               </div>
               
               <div className="card-brutal p-8">
-                <h3 className="text-brutal text-xl mb-6">ЯЗЫКИ</h3>
+                <h3 className="text-brutal text-xl mb-6 text-pixel-dark">ЯЗЫКИ</h3>
                 
                 <div className="space-y-4">
                   {[
@@ -135,7 +139,7 @@ export const About = () => {
                     { lang: "Немецкий", level: "B2", color: "bg-secondary" }
                   ].map((language) => (
                     <div key={language.lang} className="flex justify-between items-center">
-                      <span className="font-grotesk font-medium">{language.lang}</span>
+                      <span className="font-grotesk font-medium text-pixel-dark">{language.lang}</span>
                       <span className={`${language.color} text-pixel-dark px-3 py-1 text-sm font-mono border border-pixel-dark`}>
                         {language.level}
                       </span>

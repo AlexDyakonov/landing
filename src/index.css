@@ -4,27 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Brutalist Retro Pixel Art Design System - New Palette */
+/* Brutalist Retro Pixel Art Design System - Improved Contrast */
 @layer base {
   :root {
-    /* NEW Primary Brand Colors */
+    /* NEW Primary Brand Colors - Optimized for contrast */
     --pixel-primary: 221 89% 73%;    /* #80A6F5 - Primary blue */
     --pixel-secondary: 81 89% 64%;   /* #CFEA6F - Secondary lime */
     --pixel-accent: 16 22% 18%;      /* #3C2A25 - Accent dark brown */
     
     /* Background & Surface - Blue background theme */
     --background: 221 89% 73%;       /* #80A6F5 - Primary blue background */
-    --foreground: 16 22% 18%;        /* #3C2A25 - Dark text */
+    --foreground: 16 22% 18%;        /* #3C2A25 - Dark text for maximum contrast */
     --surface: 221 89% 78%;          /* Lighter blue surface */
     --surface-alt: 81 89% 64%;       /* Lime alternative surface */
     
-    /* Interactive States */
+    /* Interactive States - Enhanced for accessibility */
     --primary: 221 89% 73%;          /* Blue primary */
-    --primary-foreground: 16 22% 18%; /* Dark text on blue */
+    --primary-foreground: 16 22% 18%; /* Dark text on blue - 5.61:1 contrast */
     --secondary: 81 89% 64%;         /* Lime secondary */
-    --secondary-foreground: 16 22% 18%; /* Dark text on lime */
+    --secondary-foreground: 16 22% 18%; /* Dark text on lime - 10.10:1 contrast */
     --accent: 16 22% 18%;            /* Dark accent */
-    --accent-foreground: 81 89% 64%; /* Lime text on dark */
+    --accent-foreground: 81 89% 64%; /* Lime text on dark - 10.10:1 contrast */
     
     /* Card & Components */
     --card: 221 89% 78%;             /* Light blue cards */
@@ -33,11 +33,11 @@
     --popover-foreground: 16 22% 18%;
     
     /* Form Elements */
-    --border: 16 22% 18%;            /* Dark borders for contrast */
+    --border: 16 22% 18%;            /* Dark borders for maximum contrast */
     --input: 221 89% 80%;            /* Light blue inputs */
     --ring: 16 22% 18%;              /* Dark focus rings */
     --muted: 221 89% 85%;            /* Very light blue muted */
-    --muted-foreground: 16 22% 35%;  /* Muted dark text */
+    --muted-foreground: 16 22% 25%;  /* Darker muted text for better readability */
     
     /* Status */
     --destructive: 0 84% 60%;        /* Red for destructive actions */
@@ -138,7 +138,7 @@
 }
 
 @layer components {
-  /* Brutalist Pixel Buttons - Enhanced */
+  /* Brutalist Pixel Buttons - Enhanced for contrast */
   .btn-brutal {
     @apply font-bold uppercase tracking-[0.03em] leading-tight;
     @apply border-2 border-pixel-accent bg-pixel-primary text-pixel-accent;
@@ -177,10 +177,11 @@
     box-shadow: var(--pixel-shadow-strong);
   }
   
-  /* Typography - Geometric & Bold */
+  /* Typography - Geometric & Bold with improved contrast */
   .text-brutal {
     font-family: 'Space Grotesk', sans-serif;
     @apply font-bold uppercase tracking-[0.03em] leading-[1.1];
+    @apply text-pixel-accent; /* Always use dark text for maximum contrast */
     text-rendering: geometricPrecision;
   }
   
@@ -194,6 +195,7 @@
   .text-pixel {
     font-family: 'JetBrains Mono', monospace;
     @apply font-bold tracking-wide;
+    @apply text-pixel-accent; /* Use dark text for readability */
     image-rendering: pixelated;
   }
   
@@ -201,6 +203,7 @@
     @apply text-brutal;
     @apply border-2 border-pixel-accent inline-block px-2 py-1;
     background: linear-gradient(45deg, hsl(var(--pixel-primary)), hsl(var(--pixel-secondary)));
+    @apply text-pixel-accent;
   }
   
   /* Grid Pattern - Brutalist Graph Paper */
@@ -211,7 +214,7 @@
     background-size: var(--grid-gutter) var(--grid-gutter);
   }
   
-  /* Enhanced Glitch Effect */
+  /* Enhanced Glitch Effect with better contrast */
   .glitch {
     @apply relative text-pixel-accent;
     text-shadow: 

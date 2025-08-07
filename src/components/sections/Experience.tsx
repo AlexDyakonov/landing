@@ -58,7 +58,7 @@ export const Experience = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-16">
-            <h2 className="text-brutal text-3xl md:text-5xl mb-4">
+            <h2 className="text-brutal text-3xl md:text-5xl mb-4 text-pixel-dark">
               ОПЫТ РАБОТЫ
             </h2>
             <div className="w-24 h-1 bg-pixel-dark mx-auto"></div>
@@ -83,8 +83,9 @@ export const Experience = () => {
                         <Building className="w-6 h-6 text-pixel-dark" />
                       </div>
                       <div>
-                        <h3 className="text-brutal text-lg">{exp.company}</h3>
-                        <p className="text-pixel-blue font-mono font-bold">{exp.position}</p>
+                        <h3 className="text-brutal text-lg text-pixel-dark">{exp.company}</h3>
+                        {/* Сохраняю исправление контрастности */}
+                        <p className="text-pixel-dark font-mono font-bold">{exp.position}</p>
                       </div>
                     </div>
                     
@@ -98,14 +99,16 @@ export const Experience = () => {
                   
                   {/* Responsibilities */}
                   <div className="lg:col-span-2">
-                    <h4 className="text-brutal text-lg mb-6">КЛЮЧЕВЫЕ ЗАДАЧИ</h4>
+                    <h4 className="text-brutal text-lg mb-6 text-pixel-dark">КЛЮЧЕВЫЕ ЗАДАЧИ</h4>
                     
                     <div className="space-y-6">
                       {exp.responsibilities.map((resp, respIndex) => (
                         <div key={respIndex} className="border-l-4 border-pixel-lime pl-6">
                           <div className="flex items-center gap-3 mb-2">
-                            <CheckCircle className="w-5 h-5 text-pixel-blue" />
-                            <h5 className="font-bold text-pixel-blue">{resp.task}</h5>
+                            {/* Сохраняю исправление контрастности */}
+                            <CheckCircle className="w-5 h-5 text-pixel-dark" />
+                            {/* Сохраняю исправление контрастности */}
+                            <h5 className="font-bold text-pixel-dark">{resp.task}</h5>
                           </div>
                           <p className="text-sm leading-relaxed">{resp.details}</p>
                         </div>
@@ -120,8 +123,8 @@ export const Experience = () => {
           {/* Call to Action */}
           <div className="text-center mt-16">
             <div className="card-brutal p-8 max-w-2xl mx-auto">
-              <h3 className="text-brutal text-xl mb-4">ГОТОВ К НОВЫМ ВЫЗОВАМ</h3>
-              <p className="mb-6">
+              <h3 className="text-brutal text-xl mb-4 text-pixel-dark">ГОТОВ К НОВЫМ ВЫЗОВАМ</h3>
+              <p className="mb-6 text-pixel-dark">
                 Ищу возможности для развития в области DevOps и облачных технологий. 
                 Открыт для интересных проектов и новых команд.
               </p>

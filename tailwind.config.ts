@@ -56,6 +56,10 @@ export default {
 				'pixel-primary': 'hsl(var(--pixel-primary))',     /* #80A6F5 - Blue */
 				'pixel-secondary': 'hsl(var(--pixel-secondary))', /* #CFEA6F - Lime */
 				'pixel-accent': 'hsl(var(--pixel-accent))',       /* #3C2A25 - Dark Brown */
+				// Adding missing pixel colors for better naming consistency
+				'pixel-blue': 'hsl(var(--pixel-primary))',        /* #80A6F5 - Blue (alias) */
+				'pixel-lime': 'hsl(var(--pixel-secondary))',      /* #CFEA6F - Lime (alias) */
+				'pixel-dark': 'hsl(var(--pixel-accent))',         /* #3C2A25 - Dark Brown (alias) */
 				'surface': 'hsl(var(--surface))',
 				'surface-alt': 'hsl(var(--surface-alt))',
 				sidebar: {

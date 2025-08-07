@@ -29,7 +29,8 @@ export const Hero = () => {
           {/* Main Title */}
           <h1 className="text-brutal text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
             <span className="block">АЛЕКСАНДР</span>
-            <span className="glitch text-pixel-blue" data-text="ДЬЯКОНОВ">ДЬЯКОНОВ</span>
+            {/* Сохраняю исправление контрастности */}
+            <span className="glitch text-pixel-dark" data-text="ДЬЯКОНОВ">ДЬЯКОНОВ</span>
           </h1>
           
           {/* Subtitle */}
@@ -40,10 +41,11 @@ export const Hero = () => {
           </div>
           
           {/* Description */}
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-grotesk leading-relaxed">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-grotesk leading-relaxed text-pixel-dark">
             Студент ИТМО • Kubernetes • Docker • CI/CD 
             <br className="hidden md:block" />
-            <span className="text-pixel-blue font-bold">Автоматизация развёртывания и инфраструктура</span>
+            {/* Сохраняю исправление контрастности */}
+            <span className="text-pixel-dark font-bold">Автоматизация развёртывания и инфраструктура</span>
           </p>
           
           {/* Action Buttons */}

@@ -11,7 +11,7 @@ export const Contact = () => {
       color: "bg-pixel-lime"
     },
     {
-      name: "GitHub",
+      name: "GitHub", 
       value: "alexDyakonov",
       href: "https://github.com/alexDyakonov",
       icon: Github,
@@ -46,11 +46,11 @@ export const Contact = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Section Title */}
           <div className="mb-16">
-            <h2 className="text-brutal text-3xl md:text-5xl mb-4">
+            <h2 className="text-brutal text-3xl md:text-5xl mb-4 text-pixel-dark">
               СВЯЗАТЬСЯ СО МНОЙ
             </h2>
             <div className="w-24 h-1 bg-pixel-dark mx-auto mb-6"></div>
-            <p className="text-lg font-grotesk max-w-2xl mx-auto">
+            <p className="text-lg font-grotesk max-w-2xl mx-auto text-pixel-dark">
               Готов обсудить интересные проекты, вакансии в области DevOps 
               или просто пообщаться о технологиях
             </p>
@@ -63,13 +63,14 @@ export const Contact = () => {
                 <Mail className="w-8 h-8 text-pixel-dark" />
               </div>
               <div className="text-left">
-                <h3 className="text-brutal text-xl">ОСНОВНОЙ КОНТАКТ</h3>
-                <p className="text-pixel-blue font-mono">mrussy@yandex.ru</p>
+                <h3 className="text-brutal text-xl text-pixel-dark">ОСНОВНОЙ КОНТАКТ</h3>
+                {/* Сохраняю исправление контрастности для email */}
+                <p className="text-pixel-dark font-mono">mrussy@yandex.ru</p>
               </div>
             </div>
             
             <BrutalButton 
-              variant="pixel" 
+              variant="pixel"
               size="pixelLg"
               asChild
             >
@@ -89,7 +90,7 @@ export const Contact = () => {
                   <div className={`w-12 h-12 ${link.color} border-2 border-pixel-dark flex items-center justify-center mx-auto mb-4`}>
                     <IconComponent className="w-6 h-6 text-pixel-dark" />
                   </div>
-                  <h4 className="font-bold text-lg mb-2">{link.name}</h4>
+                  <h4 className="font-bold text-lg mb-2 text-pixel-dark">{link.name}</h4>
                   <p className="text-sm text-muted-foreground mb-4">{link.value}</p>
                   <BrutalButton 
                     variant="pixelOutline" 
@@ -108,8 +109,9 @@ export const Contact = () => {
           {/* Location */}
           <div className="card-brutal p-6 max-w-md mx-auto">
             <div className="flex items-center justify-center gap-3 mb-2">
-              <MapPin className="w-5 h-5 text-pixel-blue" />
-              <span className="font-bold text-lg">ЛОКАЦИЯ</span>
+              {/* Сохраняю исправление контрастности для иконки */}
+              <MapPin className="w-5 h-5 text-pixel-dark" />
+              <span className="font-bold text-lg text-pixel-dark">ЛОКАЦИЯ</span>
             </div>
             <p className="text-muted-foreground">Санкт-Петербург, Россия</p>
             <p className="text-sm text-muted-foreground mt-1">Готов к удаленной работе</p>

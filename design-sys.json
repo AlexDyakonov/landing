@@ -1,0 +1,106 @@
+{
+    "design_style": {
+      "aesthetic": "Brutalist Retro Pixel Art",
+      "themes": ["Playful", "Tech Nostalgia", "Experimental"],
+      "color_palette": {
+        "primary": "#80A6F5",
+        "secondary": "#CFEA6F",
+        "accent": "#3C2A25",
+        "background": "#80A6F5",
+        "text": "#3C2A25"
+      },
+      "typography": {
+        "main_fonts": ["Custom Geometric Display", "Pixel Sans", "Grotesk Mono"],
+        "font_styles": {
+          "headings": {
+            "size": "64px+",
+            "weight": "bold",
+            "case": "uppercase",
+            "letter_spacing": "0.03em",
+            "line_height": "1.1"
+          },
+          "body": {
+            "size": "16px–20px",
+            "weight": "normal",
+            "letter_spacing": "0.01em",
+            "line_height": "1.4"
+          },
+          "decorative": {
+            "usage": "Labels, CTA, or Abstracted Words",
+            "effects": ["Outlines", "Blocks", "Glitch", "Grid Alignment"]
+          }
+        }
+      },
+      "iconography": {
+        "style": "Pixel Art",
+        "themes": ["Arrows", "Game Controllers", "Hearts", "Sunglasses"],
+        "colors": ["#80A6F5", "#CFEA6F"]
+      },
+      "motion": {
+        "use": "Subtle hover shifts and element reveals",
+        "feel": "Digital, Snappy, Retro-inspired"
+      }
+    },
+    "layout_system": {
+      "grid": {
+        "type": "12-column grid",
+        "gutter": "24px",
+        "margin": "32px",
+        "alignment": "Strict vertical + modular horizontal"
+      },
+      "section_structure": [
+        "Hero: Bold statement + animation + icons",
+        "Intro: Personal statement with icon-enhanced typography",
+        "About: Halftone-style image, blocky text",
+        "Projects: Grid-like visual map of work (interactive)",
+        "Process & Tools: Infographic layout with cards and icons",
+        "Pricing: Grid-based card layout with shadows and highlight color",
+        "Contact: CTA with directional prompts, digital business card design",
+        "Outro: THANK YOU statement with brutalist typographic flourish"
+      ]
+    },
+    "components": {
+      "buttons": {
+        "style": "Outlined, pixelated edges, interactive cursor",
+        "variants": ["Primary (filled)", "Secondary (outline)", "CTA (arrow based)"]
+      },
+      "cards": {
+        "types": ["Project preview", "Tool explanation", "Price breakdown"],
+        "structure": {
+          "header": "Icon or image",
+          "body": "Text block with visual separator",
+          "footer": "Highlight or action"
+        }
+      },
+      "mobile_views": {
+        "structure": "One-column scrollable, grid preserves balance",
+        "adaptation": "Typography scales down, pixel icons preserved"
+      }
+    },
+    "visual_motifs": {
+      "pixel_shapes": ["humanoid figures", "game controllers", "hearts", "arrows"],
+      "circular_diagrams": ["Portfolio maps", "Grids inside circles"],
+      "glitch_text": "Occasional typographic distortion or substitution",
+      "split screens": "Frequent use of 2- or 3-part visual divisions"
+    },
+    "tone_and_voice": {
+      "style": "Confident, quirky, technical-yet-personal",
+      "keywords": ["Convenience", "Logic", "Beauty", "Conversion", "Memorable"],
+      "language": "Direct, first-person, humor with clarity"
+    },
+    "file_format_and_usage": {
+      "export_targets": ["Web", "Mobile", "Presentation decks", "Print (business card)"],
+      "usable_elements": ["SVGs for icons", "Grid-based templates", "Custom fonts"],
+      "platforms": ["Tilda", "Behance", "Figma", "After Effects", "Google Docs"]
+    },
+    "branding_elements": {
+      "logo_alternative": "Name-based typographic identity",
+      "signature": "“I AM OKSANA” visual mark",
+      "business_card_design": {
+        "layout": "Split grid with graph paper background",
+        "font": "Custom geometric",
+        "texture": "Fabric overlay or print-ready"
+      }
+    }
+  }
+  
