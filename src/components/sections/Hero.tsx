@@ -4,7 +4,7 @@ import heroAvatar from "@/assets/hero-avatar.png"
 
 export const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center grid-pattern relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center grid-pattern relative overflow-hidden pt-20 md:pt-0">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-16 h-16 bg-pixel-blue border-2 border-pixel-dark animate-pulse"></div>
@@ -42,10 +42,12 @@ export const Hero = () => {
           
           {/* Description */}
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-grotesk leading-relaxed text-pixel-dark">
-            Студент ИТМО • Kubernetes • Docker • CI/CD 
-            <br className="hidden md:block" />
-            {/* Сохраняю исправление контрастности */}
-            <span className="text-pixel-dark font-bold">Автоматизация развёртывания и инфраструктура</span>
+            <span className="block sm:inline">Студент ИТМО • Kubernetes • Docker • CI/CD</span>
+            <br className="hidden sm:block" />
+            <span className="block sm:inline">
+              {/* Сохраняю исправление контрастности */}
+              <span className="text-pixel-dark font-bold">Автоматизация развёртывания и инфраструктура</span>
+            </span>
           </p>
           
           {/* Action Buttons */}
@@ -83,7 +85,7 @@ export const Hero = () => {
           {/* Scroll Indicator */}
           <div className="animate-bounce">
             <ArrowDown 
-              className="w-8 h-8 mx-auto text-pixel-dark cursor-pointer hover:text-pixel-blue transition-colors"
+              className="w-8 h-8 mx-auto text-pixel-dark cursor-pointer hover:text-pixel-blue transition-colors cursor-target"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             />
           </div>

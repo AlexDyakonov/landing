@@ -2,7 +2,7 @@ import { GraduationCap, Award, MapPin } from "lucide-react"
 
 export const About = () => {
   return (
-    <section id="about" className="py-20 bg-surface relative">
+    <section id="about" className="py-20 pt-32 md:pt-20 bg-surface relative">
       {/* Grid Pattern Background */}
       <div className="absolute inset-0 grid-pattern opacity-30"></div>
       
@@ -30,11 +30,11 @@ export const About = () => {
                 <div className="space-y-4">
                   <div className="border-l-4 border-pixel-blue pl-4">
                     <h4 className="font-grotesk font-bold text-lg text-pixel-dark">Университет ИТМО</h4>
-                    <p className="text-muted-foreground">НОЦ Инфохимии</p>
+                    <p className="text-muted-foreground">Информационные системы и программирование, 09.03.04</p>
                     <p className="text-sm text-pixel-dark">Студент 2-го курса Software Engineering</p>
                     <div className="flex items-center gap-2 mt-2">
                       <MapPin className="w-4 h-4" />
-                      <span className="text-sm">Санкт-Петербург • 2022 – 2024</span>
+                      <span className="text-sm">Санкт-Петербург • 2022 – 2027</span>
                     </div>
                   </div>
                   
@@ -95,7 +95,7 @@ export const About = () => {
                     {/* Сохраняю исправление контрастности */}
                     <h4 className="font-bold text-pixel-dark mb-3">Языки программирования</h4>
                     <div className="flex flex-wrap gap-2">
-                      {["Java Core", "Python", "Bash", "SQL"].map((lang) => (
+                      {["Go", "Python", "Bash", "SQL"].map((lang) => (
                         <span key={lang} className="bg-pixel-lime text-pixel-dark px-3 py-1 text-xs font-mono border border-pixel-dark">
                           {lang}
                         </span>

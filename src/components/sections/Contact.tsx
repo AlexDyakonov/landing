@@ -4,11 +4,12 @@ import { Mail, Github, MessageCircle, ExternalLink, MapPin } from "lucide-react"
 export const Contact = () => {
   const socialLinks = [
     {
-      name: "Email",
-      value: "mrussy@yandex.ru",
-      href: "mailto:mrussy@yandex.ru",
-      icon: Mail,
-      color: "bg-pixel-lime"
+      name: "Telegram",
+      value: "schlafzucker",
+      href: "https://t.me/schlafzucker",
+      icon: MessageCircle,
+      color: "bg-pixel-lime",
+      isPrimary: true
     },
     {
       name: "GitHub", 
@@ -18,23 +19,23 @@ export const Contact = () => {
       color: "bg-pixel-blue"
     },
     {
-      name: "Telegram",
-      value: "schlafzucker",
-      href: "https://t.me/schlafzucker",
-      icon: MessageCircle,
+      name: "Email",
+      value: "mrussy@yandex.ru",
+      href: "mailto:mrussy@yandex.ru",
+      icon: Mail,
       color: "bg-secondary"
     },
     {
       name: "Habr",
-      value: "Habr Profile",
-      href: "#",
+      value: "@MrUssy",
+      href: "https://habr.com/ru/users/MrUssy/",
       icon: ExternalLink,
       color: "bg-pixel-dark"
     }
   ]
 
   return (
-    <section id="contact" className="py-20 bg-surface relative">
+    <section id="contact" className="py-20 pt-32 md:pt-20 bg-surface relative">
       {/* Grid Pattern Background */}
       <div className="absolute inset-0 grid-pattern opacity-20"></div>
       
@@ -56,27 +57,28 @@ export const Contact = () => {
             </p>
           </div>
           
-          {/* Main CTA */}
+          {/* Main CTA - Telegram как основной */}
           <div className="card-brutal p-8 mb-12">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="w-16 h-16 bg-pixel-lime border-2 border-pixel-dark flex items-center justify-center">
-                <Mail className="w-8 h-8 text-pixel-dark" />
+                <MessageCircle className="w-8 h-8 text-pixel-dark" />
               </div>
               <div className="text-left">
                 <h3 className="text-brutal text-xl text-pixel-dark">ОСНОВНОЙ КОНТАКТ</h3>
-                {/* Сохраняю исправление контрастности для email */}
-                <p className="text-pixel-dark font-mono">mrussy@yandex.ru</p>
+                <p className="text-pixel-dark font-mono">@schlafzucker</p>
               </div>
             </div>
             
             <BrutalButton 
               variant="pixel"
-              size="pixelLg"
+              size="pixel"
+              className="text-sm md:text-base px-4 py-2 md:px-8 md:py-4"
               asChild
             >
-              <a href="mailto:mrussy@yandex.ru">
-                <Mail className="w-5 h-5" />
-                НАПИСАТЬ EMAIL
+              <a href="https://t.me/schlafzucker" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
+                <span className="hidden sm:inline">НАПИСАТЬ В TELEGRAM</span>
+                <span className="sm:hidden">TELEGRAM</span>
               </a>
             </BrutalButton>
           </div>
@@ -97,7 +99,7 @@ export const Contact = () => {
                     size="sm"
                     asChild
                   >
-                    <a href={link.href} target="_blank" rel="noopener noreferrer">
+                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="cursor-target">
                       ПЕРЕЙТИ
                     </a>
                   </BrutalButton>
@@ -109,7 +111,6 @@ export const Contact = () => {
           {/* Location */}
           <div className="card-brutal p-6 max-w-md mx-auto">
             <div className="flex items-center justify-center gap-3 mb-2">
-              {/* Сохраняю исправление контрастности для иконки */}
               <MapPin className="w-5 h-5 text-pixel-dark" />
               <span className="font-bold text-lg text-pixel-dark">ЛОКАЦИЯ</span>
             </div>

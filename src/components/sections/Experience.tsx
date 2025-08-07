@@ -48,7 +48,7 @@ export const Experience = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-background relative">
+    <section id="projects" className="py-20 pt-32 md:pt-20 bg-background relative">
       {/* Background Decoration */}
       <div className="absolute top-20 right-10 opacity-20">
         <img src={serverIcon} alt="" className="w-32 h-32 pixel-perfect" />

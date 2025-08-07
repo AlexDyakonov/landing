@@ -1,0 +1,92 @@
+{
+  "effect_name": "Pixel Glitch Trail Cursor",
+  "description": "A retro pixel-style cursor trail effect with brutalist outlines, glitch pulses, and neon accents. Reacts to movement with pixel fragmentation and subtle digital snappiness.",
+  "style": {
+    "theme": "Brutalist Retro Pixel Art",
+    "color_palette": {
+      "primary": "#CFEA6F",
+      "secondary": "#80A6F5",
+      "accent": "#3C2A25",
+      "glitch_colors": ["#FF005D", "#00FFF0", "#3C2A25"]
+    },
+    "trail_type": "pixelated_square_fragments",
+    "glow": {
+      "enabled": false,
+      "hard_shadow": true,
+      "shadow_color": "#3C2A25"
+    },
+    "edges": "blocky, aliased",
+    "outline": {
+      "enabled": true,
+      "style": "1px solid #3C2A25"
+    }
+  },
+  "structure": {
+    "components": [
+      {
+        "name": "cursor_core",
+        "type": "pixel_dot",
+        "size": 6,
+        "color": "#80A6F5",
+        "outline": true,
+        "glitch_burst": {
+          "enabled": true,
+          "frequency": 0.8,
+          "intensity": "medium"
+        }
+      },
+      {
+        "name": "trail",
+        "type": "square_chunks",
+        "chunk_size": 4,
+        "max_length": 20,
+        "color_mode": "cycling_glitch_palette",
+        "fade_out": {
+          "enabled": true,
+          "fade_duration": 0.4,
+          "pixelated": true
+        },
+        "animation": {
+          "movement": "snappy",
+          "delay": 10,
+          "glitch_frames": true,
+          "frame_rate": 15
+        }
+      },
+      {
+        "name": "hover_reaction",
+        "type": "scale_snap",
+        "scale_factor": 1.15,
+        "pixel_outline_blink": true
+      }
+    ]
+  },
+  "interactivity": {
+    "trigger": "cursor_movement",
+    "reactivity": "digital-snappy",
+    "color_shift_on_click": {
+      "enabled": true,
+      "animation": "glitch_pop",
+      "sound_optional": false
+    },
+    "hover_targets": {
+      "button_variants": ["Primary", "CTA"],
+      "effect": "pixel bounce + outline thickening"
+    }
+  },
+  "rendering": {
+    "canvas_mode": true,
+    "pixel_ratio": 1,
+    "frame_limiting": true,
+    "low_fps_compatibility": true
+  },
+  "usability": {
+    "platforms": ["Web", "Mobile (Canvas)"],
+    "disable_on_reduced_motion": true,
+    "toggle_accessibility": true
+  },
+  "recommended_use": {
+    "contexts": ["Portfolio", "Experimental UI", "Tech case studies", "Gaming products"],
+    "avoid_in": ["Form-heavy UX", "Minimal corporate websites"]
+  }
+}
