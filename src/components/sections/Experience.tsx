@@ -1,51 +1,9 @@
 import { Building, Calendar, CheckCircle } from "lucide-react"
 import serverIcon from "@/assets/server-icon.png"
+import { useLanguage } from "@/hooks/useLanguage"
 
 export const Experience = () => {
-  const experiences = [
-    {
-      company: "ООО \"Инфотех\"",
-      position: "DevOps",
-      period: "13.01.2025 – настоящее время",
-      description: "Поддержка команды разработчиков по проекту \"ВТБ\"",
-      responsibilities: [
-        {
-          task: "Сопровождение",
-          details: "Сопровождение и отладка кластеров Kubernetes и Openshift; сопровождение и работа с инфрастуктурными кластерными сервисами Postgresql, Clickhouse, Redis, RabbitMQ."
-        },
-        {
-          task: "CI/CD",
-          details: "Разработка CI/CD пайплайнов Jenkins и Gitlab; оптимизировал 3 скринта, перенеся сборку фронтенда микросервисов на сервера."
-        }
-      ],
-      current: true
-    },
-    {
-      company: "ШампсТех",
-      position: "DevOps",
-      period: "2023 – настоящее время",
-      description: "Разработка и поддержка веб-сервисов и автоматизация развёртывания",
-      responsibilities: [
-        {
-          task: "Инфраструктура",
-          details: "Перенос серверной инфраструктуры с 1 сервера на 4 воды под управлением Docker Swarm, с Traefik в качестве ингрес контроллера."
-        },
-        {
-          task: "Базы данных",
-          details: "Управление и оптимизация баз данных PostgreSQL. Уменьшил время выполнения запроса в одном сервисе на 70%. Использование ClickHouse для сервиса парсера, Redis для кеширования."
-        },
-        {
-          task: "DevOps и автоматизация",
-          details: "Контейнеризация сервисов в Docker, написание docker-compose файлов, настройка CI/CD пайплайнов GH Actions для билда изображений сервисов и их доставки на сервера."
-        },
-        {
-          task: "Интеграция API",
-          details: "Подключение внешних API (2GIS, YooKassa) и систем авторизации, а также настройка генерации билетов и отправки e-mail уведомлений."
-        }
-      ],
-      current: false
-    }
-  ]
+  const { t } = useLanguage();
 
   return (
     <section id="projects" className="py-20 pt-32 md:pt-20 bg-background relative">
@@ -59,18 +17,18 @@ export const Experience = () => {
           {/* Section Title */}
           <div className="text-center mb-16">
             <h2 className="text-brutal text-3xl md:text-5xl mb-4 text-pixel-dark">
-              ОПЫТ РАБОТЫ
+              {t.experience.title}
             </h2>
             <div className="w-24 h-1 bg-pixel-dark mx-auto"></div>
           </div>
           
           <div className="space-y-12">
-            {experiences.map((exp, index) => (
+            {t.experience.experiences.map((exp, index) => (
               <div key={index} className="card-brutal p-8 relative">
-                {exp.current && (
+                {index === 0 && (
                   <div className="absolute -top-3 -right-3">
                     <div className="bg-pixel-lime text-pixel-dark px-4 py-2 text-xs font-bold border-2 border-pixel-dark shadow-brutal">
-                      ТЕКУЩАЯ РАБОТА
+                      {t.experience.current}
                     </div>
                   </div>
                 )}
@@ -99,18 +57,16 @@ export const Experience = () => {
                   
                   {/* Responsibilities */}
                   <div className="lg:col-span-2">
-                    <h4 className="text-brutal text-lg mb-6 text-pixel-dark">КЛЮЧЕВЫЕ ЗАДАЧИ</h4>
-                    
-                    <div className="space-y-6">
+                    <div className="grid gap-6">
                       {exp.responsibilities.map((resp, respIndex) => (
-                        <div key={respIndex} className="border-l-4 border-pixel-lime pl-6">
-                          <div className="flex items-center gap-3 mb-2">
-                            {/* Сохраняю исправление контрастности */}
-                            <CheckCircle className="w-5 h-5 text-pixel-dark" />
-                            {/* Сохраняю исправление контрастности */}
-                            <h5 className="font-bold text-pixel-dark">{resp.task}</h5>
+                        <div key={respIndex} className="flex gap-4">
+                          <div className="w-6 h-6 bg-pixel-lime border-2 border-pixel-dark flex items-center justify-center flex-shrink-0 mt-1">
+                            <CheckCircle className="w-3 h-3 text-pixel-dark" />
                           </div>
-                          <p className="text-sm leading-relaxed">{resp.details}</p>
+                          <div>
+                            <h4 className="font-grotesk font-bold text-pixel-dark mb-2">{resp.task}</h4>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{resp.details}</p>
+                          </div>
                         </div>
                       ))}
                     </div>

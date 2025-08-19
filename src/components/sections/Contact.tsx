@@ -1,7 +1,10 @@
 import { BrutalButton } from "@/components/ui/brutal-button"
 import { Mail, Github, MessageCircle, ExternalLink, MapPin } from "lucide-react"
+import { useLanguage } from "@/hooks/useLanguage"
 
 export const Contact = () => {
+  const { t } = useLanguage();
+
   const socialLinks = [
     {
       name: "Telegram",
@@ -48,12 +51,11 @@ export const Contact = () => {
           {/* Section Title */}
           <div className="mb-16">
             <h2 className="text-brutal text-3xl md:text-5xl mb-4 text-pixel-dark">
-              СВЯЗАТЬСЯ СО МНОЙ
+              {t.contact.title}
             </h2>
             <div className="w-24 h-1 bg-pixel-dark mx-auto mb-6"></div>
             <p className="text-lg font-grotesk max-w-2xl mx-auto text-pixel-dark">
-              Готов обсудить интересные проекты, вакансии в области DevOps 
-              или просто пообщаться о технологиях
+              {t.contact.subtitle}
             </p>
           </div>
           
@@ -99,8 +101,10 @@ export const Contact = () => {
                     size="sm"
                     asChild
                   >
-                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="cursor-target">
-                      ПЕРЕЙТИ
+                    <a href={link.href} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4" />
+                      <span className="hidden sm:inline">ПЕРЕЙТИ</span>
+                      <span className="sm:hidden">→</span>
                     </a>
                   </BrutalButton>
                 </div>
@@ -108,16 +112,22 @@ export const Contact = () => {
             })}
           </div>
           
-          {/* Location */}
-          <div className="card-brutal p-6 max-w-md mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-2">
-              <MapPin className="w-5 h-5 text-pixel-dark" />
-              <span className="font-bold text-lg text-pixel-dark">ЛОКАЦИЯ</span>
+          {/* Additional Info */}
+          <div className="card-brutal p-8">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-pixel-blue border-2 border-pixel-dark flex items-center justify-center">
+                <MapPin className="w-6 h-6 text-pixel-dark" />
+              </div>
+              <div>
+                <h3 className="text-brutal text-lg text-pixel-dark">РАСПОЛОЖЕНИЕ</h3>
+                <p className="text-pixel-dark font-mono">Санкт-Петербург, Россия</p>
+              </div>
             </div>
-            <p className="text-muted-foreground">Санкт-Петербург, Россия</p>
-            <p className="text-sm text-muted-foreground mt-1">Готов к удаленной работе</p>
+            
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              {t.contact.description}
+            </p>
           </div>
-          
         </div>
       </div>
     </section>

@@ -1,8 +1,11 @@
 import { BrutalButton } from "@/components/ui/brutal-button"
 import { ArrowDown, Github, Mail, ExternalLink } from "lucide-react"
 import heroAvatar from "@/assets/hero-avatar.png"
+import { useLanguage } from "@/hooks/useLanguage"
 
 export const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="min-h-screen flex items-center justify-center grid-pattern relative overflow-hidden pt-20 md:pt-0">
       {/* Background Elements */}
@@ -28,25 +31,25 @@ export const Hero = () => {
           
           {/* Main Title */}
           <h1 className="text-brutal text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
-            <span className="block">АЛЕКСАНДР</span>
+            <span className="block">{t.hero.title}</span>
             {/* Сохраняю исправление контрастности */}
-            <span className="glitch text-pixel-dark" data-text="ДЬЯКОНОВ">ДЬЯКОНОВ</span>
+            <span className="glitch text-pixel-dark" data-text={t.hero.subtitle}>{t.hero.subtitle}</span>
           </h1>
           
           {/* Subtitle */}
           <div className="mb-8">
             <div className="inline-block bg-pixel-dark text-pixel-lime px-6 py-3 border-2 border-pixel-dark shadow-brutal text-pixel font-bold uppercase tracking-wider">
-              DEVOPS ENGINEER
+              {t.hero.role}
             </div>
           </div>
           
           {/* Description */}
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-grotesk leading-relaxed text-pixel-dark">
-            <span className="block sm:inline">Студент ИТМО • Kubernetes • Docker • CI/CD</span>
+            <span className="block sm:inline">{t.hero.description}</span>
             <br className="hidden sm:block" />
             <span className="block sm:inline">
               {/* Сохраняю исправление контрастности */}
-              <span className="text-pixel-dark font-bold">Автоматизация развёртывания и инфраструктура</span>
+              <span className="text-pixel-dark font-bold">{t.hero.description2}</span>
             </span>
           </p>
           
@@ -58,7 +61,7 @@ export const Hero = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Mail className="w-5 h-5" />
-              СВЯЗАТЬСЯ
+              {t.hero.contact}
             </BrutalButton>
             
             <BrutalButton 
@@ -67,7 +70,7 @@ export const Hero = () => {
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <ExternalLink className="w-5 h-5" />
-              ПРОЕКТЫ
+              {t.hero.projects}
             </BrutalButton>
             
             <BrutalButton 
@@ -77,7 +80,7 @@ export const Hero = () => {
             >
               <a href="https://github.com/alexDyakonov" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5" />
-                GITHUB
+                {t.hero.github}
               </a>
             </BrutalButton>
           </div>
