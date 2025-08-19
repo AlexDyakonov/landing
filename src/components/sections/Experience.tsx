@@ -79,21 +79,19 @@ export const Experience = () => {
           {/* Call to Action */}
           <div className="text-center mt-16">
             <div className="card-brutal p-8 max-w-2xl mx-auto">
-              <h3 className="text-brutal text-xl mb-4 text-pixel-dark">ГОТОВ К НОВЫМ ВЫЗОВАМ</h3>
+              <h3 className="text-brutal text-xl mb-4 text-pixel-dark">{t.experience.callToAction.title}</h3>
               <p className="mb-6 text-pixel-dark">
-                Ищу возможности для развития в области DevOps и облачных технологий. 
-                Открыт для интересных проектов и новых команд.
+                {t.experience.callToAction.description}
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <div className="bg-pixel-lime text-pixel-dark px-4 py-2 font-mono text-sm border border-pixel-dark">
-                  Docker & Kubernetes
-                </div>
-                <div className="bg-pixel-blue text-pixel-dark px-4 py-2 font-mono text-sm border border-pixel-dark">
-                  CI/CD Pipelines
-                </div>
-                <div className="bg-secondary text-pixel-dark px-4 py-2 font-mono text-sm border border-pixel-dark">
-                  Infrastructure as Code
-                </div>
+                {t.experience.callToAction.skills.map((skill, index) => (
+                  <div key={index} className={`${
+                    index === 0 ? 'bg-pixel-lime' : 
+                    index === 1 ? 'bg-pixel-blue' : 'bg-secondary'
+                  } text-pixel-dark px-4 py-2 font-mono text-sm border border-pixel-dark`}>
+                    {skill}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

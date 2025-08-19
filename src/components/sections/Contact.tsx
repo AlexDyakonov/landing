@@ -66,7 +66,7 @@ export const Contact = () => {
                 <MessageCircle className="w-8 h-8 text-pixel-dark" />
               </div>
               <div className="text-left">
-                <h3 className="text-brutal text-xl text-pixel-dark">ОСНОВНОЙ КОНТАКТ</h3>
+                <h3 className="text-brutal text-xl text-pixel-dark">{t.contact.mainContact}</h3>
                 <p className="text-pixel-dark font-mono">@schlafzucker</p>
               </div>
             </div>
@@ -79,8 +79,8 @@ export const Contact = () => {
             >
               <a href="https://t.me/schlafzucker" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
-                <span className="hidden sm:inline">НАПИСАТЬ В TELEGRAM</span>
-                <span className="sm:hidden">TELEGRAM</span>
+                <span className="hidden sm:inline">{t.contact.telegramButton}</span>
+                <span className="sm:hidden">{t.contact.telegramButtonMobile}</span>
               </a>
             </BrutalButton>
           </div>
@@ -103,7 +103,7 @@ export const Contact = () => {
                   >
                     <a href={link.href} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4" />
-                      <span className="hidden sm:inline">ПЕРЕЙТИ</span>
+                      <span className="hidden sm:inline">{t.contact.goButton}</span>
                       <span className="sm:hidden">→</span>
                     </a>
                   </BrutalButton>
@@ -119,8 +119,8 @@ export const Contact = () => {
                 <MapPin className="w-6 h-6 text-pixel-dark" />
               </div>
               <div>
-                <h3 className="text-brutal text-lg text-pixel-dark">РАСПОЛОЖЕНИЕ</h3>
-                <p className="text-pixel-dark font-mono">Санкт-Петербург, Россия</p>
+                <h3 className="text-brutal text-lg text-pixel-dark">{t.contact.location}</h3>
+                <p className="text-pixel-dark font-mono">{t.contact.locationCity}</p>
               </div>
             </div>
             

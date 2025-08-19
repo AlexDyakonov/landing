@@ -57,6 +57,11 @@ export const ru = {
     previous: "ПРЕДЫДУЩИЙ ОПЫТ",
     internships: "СТАЖИРОВКИ",
     projects: "ПРОЕКТЫ",
+    callToAction: {
+      title: "ГОТОВ К НОВЫМ ВЫЗОВАМ",
+      description: "Ищу возможности для развития в области DevOps и облачных технологий. Открыт для интересных проектов и новых команд.",
+      skills: ["Docker & Kubernetes", "CI/CD Pipelines", "Infrastructure as Code"]
+    },
     experiences: [
       {
         company: "ООО \"Инфотех\"",
@@ -101,14 +106,20 @@ export const ru = {
     ]
   },
   contact: {
-    title: "СВЯЗАТЬСЯ",
+    title: "СВЯЗАТЬСЯ СО МНОЙ",
     subtitle: "Готов к новым вызовам и проектам",
-    description: "Если у вас есть интересные предложения или вопросы, не стесняйтесь обращаться!",
+    description: "Ищу возможности для развития в области DevOps и облачных технологий. Открыт для интересных проектов и новых команд.",
     form: {
       name: "Имя",
       email: "Email",
       message: "Сообщение",
       send: "ОТПРАВИТЬ"
-    }
+    },
+    mainContact: "ОСНОВНОЙ КОНТАКТ",
+    location: "РАСПОЛОЖЕНИЕ",
+    locationCity: "Санкт-Петербург, Россия",
+    goButton: "ПЕРЕЙТИ",
+    telegramButton: "НАПИСАТЬ В TELEGRAM",
+    telegramButtonMobile: "TELEGRAM"
   }
 }; 

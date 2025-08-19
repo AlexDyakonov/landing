@@ -57,6 +57,11 @@ export const en = {
     previous: "PREVIOUS EXPERIENCE",
     internships: "INTERNSHIPS",
     projects: "PROJECTS",
+    callToAction: {
+      title: "READY FOR NEW CHALLENGES",
+      description: "Looking for opportunities to develop in DevOps and cloud technologies. Open to interesting projects and new teams.",
+      skills: ["Docker & Kubernetes", "CI/CD Pipelines", "Infrastructure as Code"]
+    },
     experiences: [
       {
         company: "LLC \"Infotech\"",
@@ -101,14 +106,20 @@ export const en = {
     ]
   },
   contact: {
-    title: "CONTACT",
+    title: "CONTACT ME",
     subtitle: "Ready for new challenges and projects",
-    description: "If you have interesting offers or questions, don't hesitate to reach out!",
+    description: "Looking for opportunities to develop in DevOps and cloud technologies. Open to interesting projects and new teams.",
     form: {
       name: "Name",
       email: "Email",
       message: "Message",
       send: "SEND"
-    }
+    },
+    mainContact: "MAIN CONTACT",
+    location: "LOCATION",
+    locationCity: "Saint Petersburg, Russia",
+    goButton: "GO",
+    telegramButton: "WRITE TO TELEGRAM",
+    telegramButtonMobile: "TELEGRAM"
   }
 }; 
