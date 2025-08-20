@@ -7,6 +7,7 @@ import { DynamicCursor } from "@/components/ui/dynamic-cursor"
 import { LanguageSwitcher } from "@/components/ui/language-switcher"
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import BlogPage from "./pages/Blog";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,10 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/en" element={<Index />} />
             <Route path="/en/" element={<Index />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/*" element={<BlogPage />} />
+            <Route path="/en/blog" element={<BlogPage />} />
+            <Route path="/en/blog/*" element={<BlogPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

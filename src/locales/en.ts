@@ -105,6 +105,14 @@ export const en = {
       }
     ]
   },
+  blog: {
+    title: "MY BLOG",
+    subtitle: "Sharing knowledge and experience",
+    description: "I write about DevOps, cloud technologies, automation and everything related to modern infrastructure development.",
+    topics: ["Kubernetes", "Docker", "CI/CD", "Cloud Technologies", "Automation"],
+    cta: "READ BLOG",
+    latest: "Latest articles"
+  },
   contact: {
     title: "CONTACT ME",
     subtitle: "Ready for new challenges and projects",
