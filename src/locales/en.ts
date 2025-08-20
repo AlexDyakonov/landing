@@ -119,7 +119,7 @@ export const en = {
     location: "LOCATION",
     locationCity: "Saint Petersburg, Russia",
     goButton: "GO",
-    telegramButton: "WRITE TO TELEGRAM",
+    telegramButton: "HIRE ME",
     telegramButtonMobile: "TELEGRAM"
   }
 }; 

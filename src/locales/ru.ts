@@ -119,7 +119,7 @@ export const ru = {
     location: "РАСПОЛОЖЕНИЕ",
     locationCity: "Санкт-Петербург, Россия",
     goButton: "ПЕРЕЙТИ",
-    telegramButton: "НАПИСАТЬ В TELEGRAM",
+    telegramButton: "НАНЯТЬ МЕНЯ",
     telegramButtonMobile: "TELEGRAM"
   }
 }; 
